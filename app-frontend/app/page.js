@@ -1,10 +1,15 @@
 "use client";
+import { login, createAccount, resetEmail,logout } 
+from "./core/auth";
+import { useState } from "react";
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default function Home() {
   return (
    <div className="md:flex flex-row flex-col bg-white dark:bg-black md:h-screen  md:mt-10 -mt-40 ">
                    
-                     <div className="md:ml-130 ml-10">  <h1 className="text-black dark:text-white text-3xl font-bold  md:mt-25 mt-90 font-[marcellus] ">WELCOME BACK</h1></div>
+                     <div className="md:ml-130 ml-10">  <h1 className="text-black dark:text-white text-3xl font-bold  md:mt-25 mt-90 font-[marcellus] ">Digital Diary</h1></div>
                    <div className="md:-ml-63 ml-11"> <h6 className="text-gray-700 dark:text-gray-500 md:mt-38 mt-5  font-[lato]">Enter your email and password</h6></div>
                     <div className="flex flex-col md:-ml-56 ml-10">
                         <input className="md:w-90 w-70 h-13 bg-gray-300 text-black rounded-[5px] md:mt-50 mt-5 px-7 "type="email"placeholder="Email*" onChange={(e) => setEmail(e.target.value)}
