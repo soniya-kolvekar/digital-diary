@@ -1,0 +1,3 @@
+C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/server.dir
+C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/edit_cache.dir
+C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/rebuild_cache.dir
