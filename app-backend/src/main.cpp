@@ -23,6 +23,19 @@ int main() {
 
     httplib::Server server;
 
+    server.set_pre_routing_handler([](const httplib::Request&, httplib::Response& res) {
+    res.set_header("Access-Control-Allow-Origin", "*");
+    res.set_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.set_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Protect-Key");
+    return httplib::Server::HandlerResponse::Unhandled;
+});
+
+// Handle preflight OPTIONS requests
+server.Options(R"(.*)", [](const httplib::Request&, httplib::Response& res) {
+    res.status = 204;
+});
+
+
     // -------------------------------------------------------------------
     // HEALTH CHECK
     // -------------------------------------------------------------------
