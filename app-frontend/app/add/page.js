@@ -12,7 +12,7 @@ export default function AddEntryPage() {
     e.preventDefault();
 
     
-   const res = await fetch("http://localhost:8080/entry/add", {
+   const res = await fetch("http://localhost:8000/entry/add", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
