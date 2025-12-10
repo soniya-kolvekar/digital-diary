@@ -11,21 +11,22 @@ export default function AddEntryPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:8000/entry/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    
+   const res = await fetch("http://localhost:8080/entry/add", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer testuser"
+  },
+  body: JSON.stringify({
+    title,
+    content,
+    mood,
+    tags: [],
+    is_protected: false
+  }),
+});
 
-        // IMPORTANT → C++ backend expects Authorization: Bearer <uid>
-        "Authorization": "Bearer testuser"
-      },
-      body: JSON.stringify({
-        title,
-        content,
-        mood,
-        date: new Date().toISOString(),
-      }),
-    });
 
     if (res.ok) {
       setMessage("Entry added successfully!");
