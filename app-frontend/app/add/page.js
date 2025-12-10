@@ -16,16 +16,18 @@ export default function AddEntryPage() {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    "Authorization": "Bearer testuser"
+    "Authorization": "Bearer testuser",
   },
   body: JSON.stringify({
     title,
     content,
     mood,
-    tags: [],
-    is_protected: false
+    date: new Date().toISOString(),
+    tags: [],             // ADD THIS
+    is_protected: false   // ADD THIS
   }),
 });
+
 
 
     if (res.ok) {
