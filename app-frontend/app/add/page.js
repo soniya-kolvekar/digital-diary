@@ -1,0 +1,105 @@
+"use client";
+
+import { useState } from "react";
+
+export default function AddEntryPage() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [mood, setMood] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:8000/entry/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+
+        // IMPORTANT → C++ backend expects Authorization: Bearer <uid>
+        "Authorization": "Bearer testuser"
+      },
+      body: JSON.stringify({
+        title,
+        content,
+        mood,
+        date: new Date().toISOString(),
+      }),
+    });
+
+    if (res.ok) {
+      setMessage("Entry added successfully!");
+      setTitle("");
+      setContent("");
+      setMood("");
+    } else {
+      setMessage("Failed to add entry.");
+    }
+  }
+
+  return (
+    <div
+      style={{
+        background:
+          "linear-gradient(to bottom, #9cc8edff 0%, #F3C9D8 45%, #FBC7E0 100%)",
+      }}
+      className="min-h-screen"
+    >
+      <h1 className="text-5xl font-bold ml-20 text-black font-[marcellus] py-20">
+        Add New Diary Entry
+      </h1>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 mt-5 ml-20 w-[60%]"
+      >
+        <input
+          type="text"
+          value={title}
+          placeholder="Title"
+          onChange={(e) => setTitle(e.target.value)}
+          required
+          className="text-black p-3 text-lg border border-gray-300 rounded-md bg-white"
+        />
+
+        <textarea
+          value={content}
+          placeholder="Write your diary entry..."
+          onChange={(e) => setContent(e.target.value)}
+          required
+          rows={6}
+          className="text-black p-3 text-lg border border-gray-300 rounded-md bg-white resize-none"
+        />
+
+        <select
+          value={mood}
+          onChange={(e) => setMood(e.target.value)}
+          required
+          className="text-black p-3 text-lg border border-gray-300 rounded-md bg-white"
+        >
+          <option value="">Select Mood</option>
+          <option value="happy">😊 Happy</option>
+          <option value="sad">😔 Sad</option>
+          <option value="angry">😡 Angry</option>
+          <option value="excited">🤩 Excited</option>
+          <option value="stressed">😫 Stressed</option>
+        </select>
+
+        <button
+          type="submit"
+          className="p-3 text-lg rounded-md mt-2"
+          style={{
+            backgroundColor: "#a1f1deff",
+            color: "black",
+          }}
+        >
+          Add Entry
+        </button>
+      </form>
+
+      {message && (
+        <p className="ml-20 mt-4 text-green-700 font-bold text-lg">{message}</p>
+      )}
+    </div>
+  );
+}
