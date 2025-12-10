@@ -1,95 +1,78 @@
-// "use client";
+"use client";
 
-// import { useState } from "react";
+import { useState } from "react";
 
-// export default function DeleteEntryPage() {
-//   const [id, setId] = useState("");
-//   const [message, setMessage] = useState("");
+export default function DeleteEntryPage() {
+  const [id, setId] = useState("");
+  const [message, setMessage] = useState("");
 
-//   async function handleDelete(e) {
-//     e.preventDefault();
+  async function handleDelete(e) {
+    e.preventDefault();
+    setMessage("");
 
-//     const res = await fetch("http://localhost:8000/delete-entry", {
-//       method: "DELETE",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ id }),
-//     });
+    try {
+      const res = await fetch(`http://localhost:8080/entry/delete?id=${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer testuser", // Same as Add Entry page
+        },
+      });
 
-//     if (res.ok) {
-//       setMessage("Entry deleted successfully!");
-//       setId("");
-//     } else {
-//       setMessage("Failed to delete entry.");
-//     }
-//   }
+      if (!res.ok) {
+        const err = await res.json();
+        setMessage(`❌ Failed: ${err.error || "Unknown error"}`);
+        return;
+      }
 
-//   return (
-//     <div
-//       style={{
-//         background:
-//           "linear-gradient(to bottom, #C8E0F5 0%, #F3C9D8 45%, #FBC7E0 100%)",
-//       }}
-//       className="min-h-screen"
-//     >
-//       <h1 className="text-5xl font-bold ml-20 text-black font-[marcellus] py-20">
-//         Delete Diary Entry
-//       </h1>
+      setMessage("✅ Entry deleted successfully!");
+      setId("");
 
-//       <form
-//         onSubmit={handleDelete}
-//         style={{
-//           display: "flex",
-//           flexDirection: "column",
-//           gap: "12px",
-//           marginTop: "20px",
-//         }}
-//       >
-//         <input
-//           type="text"
-//           value={id}
-//           placeholder="Enter Entry ID to Delete"
-//           onChange={(e) => setId(e.target.value)}
-//           required
-//           style={{
-//             padding: "10px",
-//             fontSize: "16px",
-//             border: "1px solid #ccc",
-//             borderRadius: "5px",
-//           }}
-//           className="text-black w-100 ml-20 -mt-10"
-//         />
+    } catch (error) {
+      setMessage("❌ Failed to connect to server");
+    }
+  }
 
-//         <button
-//           type="submit"
-//           style={{
-//             backgroundColor: "#F5A1A1", // soft pastel red (matches theme)
-//             color: "black",
-//             padding: "12px",
-//             fontSize: "16px",
-//             border: "none",
-//             borderRadius: "5px",
-//             cursor: "pointer",
-//           }}
-//           className="w-100 ml-20 mt-3"
-//         >
-//           Delete Entry
-//         </button>
-//       </form>
+  return (
+    <div
+      style={{
+        background:
+          "linear-gradient(to bottom, #9cc8edff 0%, #F3C9D8 45%, #FBC7E0 100%)",
+      }}
+      className="min-h-screen"
+    >
+      <h1 className="text-5xl font-bold ml-20 text-black font-[marcellus] py-20">
+        Delete Diary Entry
+      </h1>
 
-//       {message && (
-//         <p
-//           style={{
-//             marginTop: "15px",
-//             color: "green",
-//             fontWeight: "bold",
-//             marginLeft: "80px",
-//           }}
-//         >
-//           {message}
-//         </p>
-//       )}
-//     </div>
-//   );
-// }
+      <form
+        onSubmit={handleDelete}
+        className="flex flex-col gap-4 mt-5 ml-20 w-[60%]"
+      >
+        <input
+          type="text"
+          value={id}
+          placeholder="Enter Entry ID to delete"
+          onChange={(e) => setId(e.target.value)}
+          required
+          className="text-black p-3 text-lg border border-gray-300 rounded-md bg-white"
+        />
+
+        <button
+          type="submit"
+          className="p-3 text-lg rounded-md mt-2"
+          style={{
+            backgroundColor: "#a1f1deff",
+            color: "black",
+          }}
+        >
+          Delete Entry
+        </button>
+      </form>
+
+      {message && (
+        <p className="ml-20 mt-4 text-black font-bold text-lg">{message}</p>
+      )}
+    </div>
+  );
+}
