@@ -1,0 +1,10 @@
+^D:\DIGITAL DIARY\DIGITAL-DIARY\APP-BACKEND\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/digital diary/digital-diary/app-backend" "-BD:/digital diary/digital-diary/app-backend/build" --check-stamp-file "D:/digital diary/digital-diary/app-backend/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^D:\DIGITAL DIARY\DIGITAL-DIARY\APP-BACKEND\BUILD\CMAKEFILES\3C00D5BC80B2FB4B38AFD69B85CC1A04\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/digital diary/digital-diary/app-backend" "-BD:/digital diary/digital-diary/app-backend/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/digital diary/digital-diary/app-backend/build/diary_backend.slnx"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

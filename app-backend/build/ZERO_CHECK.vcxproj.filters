@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\digital diary\digital-diary\app-backend\build\CMakeFiles\3c00d5bc80b2fb4b38afd69b85cc1a04\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C536844E-7FE5-31F6-92C5-D615EB4F78B6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
