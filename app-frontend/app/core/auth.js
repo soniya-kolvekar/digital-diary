@@ -4,7 +4,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
-  sendEmailVerification
+  sendEmailVerification,
+  onAuthStateChanged
 } from "firebase/auth";
 export async function createAccount(email, password) {
   try {
@@ -32,5 +33,13 @@ export async function logout(email, password) {
   }
 }
 export async function resetEmail(email){
-    return await sendPasswordResetEmail(auth,email)
+    try { await sendPasswordResetEmail(auth,email)
+    alert("Reset email sent");
+
+  }catch(error){
+    console.log(error);
+  
+}}
+export function listenToAuthChanges(callback){
+  onAuthStateChanged(auth,callback);
 }

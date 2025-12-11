@@ -1,11 +1,12 @@
 "use client";
 import { login, createAccount, resetEmail,logout } 
 from "./core/auth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const router = useRouter();
   return (
 <div className="flex flex-row bg-gradient-to-b from-[#C8E0F5] via-[#F3C9D8] to-[#FBC7E0]">
    <div className="md:flex flex-row flex-col   md:h-screen   md:mt-10 -mt-40 ">
@@ -20,6 +21,7 @@ export default function Login() {
                         <button className="md:w-50 w-40 h-13 bg-[#ECA49C]  rounded-[5px] mt-5 text-black hover:text-white justify-center items-center md:mx-20  hover:bg-[#7b4c2b]"onClick={async(event)=>{
                           console.log(email,password);
                           await login (email,password);
+                          router.replace('/home');
                         }}>Login
                       </button>
                       <button className="md:w-50 w-40 h-13  bg-[#ECA49C] rounded-[5px] mt-5 text-black hover:text-white justify-center items-center md:mx-20   hover:bg-[#7b4c2b]"onClick={async(event)=>{
