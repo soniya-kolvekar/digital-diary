@@ -10,7 +10,7 @@ export default function HomePage() {
         
       <div className="bg-white/40 backdrop-blur-md shadow-xl rounded-2xl p-10 max-w-2xl w-full ">
 
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl font-bold text-gray-800 mb-6 font-[marcellus]">
           Welcome to Digital Diary
         </h1>
 
