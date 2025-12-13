@@ -45,13 +45,13 @@ export default function AddEntryPage() {
       }}
       className="min-h-screen"
     >
-      <h1 className="text-5xl font-bold ml-20 text-black font-[marcellus] py-20">
+      <h1 className="text-5xl font-bold ml-115 text-black font-[marcellus] py-20 ">
         Add New Diary Entry
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 mt-5 ml-20 w-[60%]"
+        className="flex flex-col gap-4 -mt-5 ml-70 w-[60%]"
       >
         <input
           type="text"
