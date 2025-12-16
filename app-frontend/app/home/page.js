@@ -1,10 +1,10 @@
 "use client"
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-300 to-pink-200 flex  p-6">
+    <div className="min-h-screen  bg-gradient-to-b from-[#95c9f7] via-[#ffcedf] to-[#FBC7E0] flex  p-6">
       <div className="w-1/2  flex flex-col  space-y-1 ">
         <div>
-          <img src="https://i.pinimg.com/1200x/d7/f3/92/d7f3925344fb1f37704fac60d240d67a.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-800 border-2" />
+          <img src="https://i.pinimg.com/1200x/d7/f3/92/d7f3925344fb1f37704fac60d240d67a.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-500 border-2" />
       </div>
       <div>
         
