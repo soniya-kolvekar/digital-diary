@@ -1,8 +1,9 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function AddEntryPage() {
+  const router=useRouter();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [mood, setMood] = useState("");
@@ -95,11 +96,20 @@ export default function AddEntryPage() {
         >
           Add Entry
         </button>
+        <button
+  type="button"
+  className="bg-[#a1f1deff] p-3 h-10 w-30 text-black ml-2 rounded font-bold"
+  onClick={() => router.push("/home")}
+>
+  Back
+</button>
+     
       </form>
 
       {message && (
         <p className="ml-20 mt-4 text-green-700 font-bold text-lg">{message}</p>
       )}
+     
     </div>
   );
 }

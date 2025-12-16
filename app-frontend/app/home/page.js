@@ -1,10 +1,12 @@
 "use client"
+import { useRouter } from "next/navigation";
 export default function HomePage() {
+  const router=useRouter();
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-300 to-pink-200 flex  p-6">
+    <div className="min-h-screen  bg-gradient-to-b from-[#95c9f7] via-[#ffcedf] to-[#FBC7E0] flex  p-6">
       <div className="w-1/2  flex flex-col  space-y-1 ">
         <div>
-          <img src="https://i.pinimg.com/1200x/d7/f3/92/d7f3925344fb1f37704fac60d240d67a.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-800 border-2" />
+          <img src="https://i.pinimg.com/1200x/d7/f3/92/d7f3925344fb1f37704fac60d240d67a.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-500 border-2" />
       </div>
       <div>
         
@@ -22,14 +24,14 @@ export default function HomePage() {
 
           <a
             href="/add"
-            className="w-full py-3 bg-blue-200 hover:bg-blue-300 transition-colors rounded-lg font-medium text-gray-800"
+            className="w-full py-3 bg-purple-200 hover:bg-blue-300 transition-colors rounded-lg font-medium text-gray-800"
           >
             ➕ Add New Entry
           </a>
 
           <a
             href="/delete"
-            className="w-full py-3 bg-red-200 hover:bg-red-300 transition-colors rounded-lg font-medium text-gray-800"
+            className="w-full py-3 bg-purple-200 hover:bg-red-300 transition-colors rounded-lg font-medium text-gray-800"
           >
             🗑️ Delete Entry
           </a>
@@ -40,7 +42,19 @@ export default function HomePage() {
           >
             ℹ️ About Us
           </a>
-
+          <a
+            href="/streak"
+            className="w-full py-3 bg-purple-200 hover:bg-purple-300 transition-colors rounded-lg font-medium text-gray-800"
+          >
+            🔥 Streak
+          </a>
+            <button
+  type="button"
+  className="bg-purple-200 p-3 h-10 w-30 text-black mt-4  rounded font-bold"
+  onClick={() => router.push("/")}
+>
+  Back
+</button>
         </div>
       </div>
     </div></div>

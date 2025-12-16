@@ -1,14 +1,18 @@
-"use client";
-
+"use client"; 
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function EntriesPage() {
+  const router = useRouter();
   const [entries, setEntries] = useState([]);
   const [message, setMessage] = useState("");
   const [editId, setEditId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editContent, setEditContent] = useState("");
   const [editMood, setEditMood] = useState("");
+  const [filterMood, setFilterMood] = useState(""); // mood filter
+  const [filterDate, setFilterDate] = useState(""); // date filter
+  const [showAll, setShowAll] = useState(true); // show all entries
 
   // Load all entries on page load
   async function loadEntries() {
@@ -28,9 +32,7 @@ export default function EntriesPage() {
     loadEntries();
   }, []);
 
-  // -------------------------------------
-  // DELETE ENTRY
-  // -------------------------------------
+  // Delete entry
   async function deleteEntry(id) {
     const res = await fetch(
       `http://localhost:8080/entry/delete?uid=testuser&id=${id}`,
@@ -50,9 +52,7 @@ export default function EntriesPage() {
     }
   }
 
-  // -------------------------------------
-  // OPEN EDIT FORM
-  // -------------------------------------
+  // Start edit
   function startEdit(entry) {
     setEditId(entry.id);
     setEditTitle(entry.title);
@@ -60,9 +60,7 @@ export default function EntriesPage() {
     setEditMood(entry.mood);
   }
 
-  // -------------------------------------
-  // UPDATE ENTRY
-  // -------------------------------------
+  // Update entry
   async function updateEntry(e) {
     e.preventDefault();
 
@@ -89,6 +87,14 @@ export default function EntriesPage() {
     }
   }
 
+  // Filtered entries
+  const filteredEntries = entries.filter((entry) => {
+    if (showAll) return true;
+    if (filterMood) return entry.mood === filterMood;
+    if (filterDate) return entry.created_at.startsWith(filterDate);
+    return true;
+  });
+
   return (
     <div
       style={{
@@ -97,7 +103,7 @@ export default function EntriesPage() {
       }}
       className="min-h-screen p-10"
     >
-      <h1 className="text-5xl font-bold text-black font-[marcellus] mb-10">
+      <h1 className="text-5xl ml-115 font-bold text-black font-[marcellus] mb-10">
         Your Diary Entries
       </h1>
 
@@ -106,14 +112,55 @@ export default function EntriesPage() {
         <p className="text-green-700 text-xl font-bold mb-5">{message}</p>
       )}
 
+      {/* Filters */}
+      <div className="flex gap-4 mb-6">
+        <button
+          onClick={() => {
+            setShowAll(true);
+            setFilterMood("");
+            setFilterDate("");
+          }}
+          className="p-2 bg-blue-200 rounded text-black border-black border-1"
+        >
+          All Entries
+        </button>
+
+        <select
+          value={filterMood}
+          onChange={(e) => {
+            setFilterMood(e.target.value);
+            setShowAll(false);
+            setFilterDate("");
+          }}
+          className="p-2 border rounded text-black"
+        >
+          <option value="">Select Mood</option>
+          <option value="happy">😊 Happy</option>
+          <option value="sad">😔 Sad</option>
+          <option value="angry">😡 Angry</option>
+          <option value="excited">🤩 Excited</option>
+          <option value="stressed">😫 Stressed</option>
+        </select>
+
+        <input
+          type="date"
+          value={filterDate}
+          onChange={(e) => {
+            setFilterDate(e.target.value);
+            setShowAll(false);
+            setFilterMood("");
+          }}
+          className="p-2 border rounded text-black"
+        />
+      </div>
+
       {/* Entries List */}
-      <div className="flex flex-col gap-6">
-        {entries.map((entry) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredEntries.map((entry) => (
           <div
             key={entry.id}
-            className="bg-white p-5 rounded-xl shadow-md text-black"
+            className="bg-white p-11 rounded-xl shadow-md text-black"
           >
-            {/* If editing this entry */}
             {editId === entry.id ? (
               <form onSubmit={updateEntry} className="flex flex-col gap-3">
                 <input
@@ -121,14 +168,12 @@ export default function EntriesPage() {
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
                 />
-
                 <textarea
                   className="p-3 border rounded"
                   rows={4}
                   value={editContent}
                   onChange={(e) => setEditContent(e.target.value)}
                 />
-
                 <select
                   className="p-3 border rounded"
                   value={editMood}
@@ -140,14 +185,12 @@ export default function EntriesPage() {
                   <option value="excited">🤩 Excited</option>
                   <option value="stressed">😫 Stressed</option>
                 </select>
-
                 <button
                   type="submit"
                   className="bg-green-300 p-3 rounded font-bold"
                 >
                   Update Entry
                 </button>
-
                 <button
                   type="button"
                   className="bg-gray-300 p-3 rounded font-bold"
@@ -159,28 +202,39 @@ export default function EntriesPage() {
             ) : (
               <>
                 <h2 className="text-3xl font-bold">{entry.title}</h2>
+                <p className="mt-1 text-sm italic">Date: {entry.created_at}</p>
                 <p className="mt-2">{entry.content}</p>
                 <p className="mt-1 italic">Mood: {entry.mood}</p>
 
                 <div className="flex gap-4 mt-4">
                   <button
                     onClick={() => startEdit(entry)}
-                    className="bg-yellow-300 px-4 py-2 rounded font-bold"
+                    className="bg-[#a1f1deff] px-4 py-2 rounded font-bold"
                   >
                     Edit
                   </button>
-
                   <button
                     onClick={() => deleteEntry(entry.id)}
-                    className="bg-red-300 px-4 py-2 rounded font-bold"
+                    className="bg-[#a1f1deff] px-4 py-2 rounded font-bold"
                   >
                     Delete
                   </button>
+                  
                 </div>
+               
               </>
             )}
+            
           </div>
         ))}
+        <button
+  type="button"
+  className="bg-[#a1f1deff] p-3 h-10 w-30 text-black ml-2 rounded font-bold"
+  onClick={() => router.push("/home")}
+>
+  Back
+</button>
+
       </div>
     </div>
   );
