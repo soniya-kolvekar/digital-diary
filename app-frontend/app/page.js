@@ -35,7 +35,9 @@ const router = useRouter();
                         }}>Send Reset Email
                       </button>
                       
-                       <div className=" flex flex-row ">  <h6 className="text-gray-700 ml-10 mt-5 "> Don't have an account?</h6><h6 className="text-[#ECA49C] underline mt-5 ml-2"> Register Now!</h6></div>
+                       <div className=" flex flex-row ">  <h6 className="text-gray-700 ml-10 mt-5 "> Don't have an account?</h6><h6 className="text-[#ECA49C] underline mt-5 ml-2"onClick={async(event)=>{
+                         
+                       router.replace('/signup')}}> Sign Up!</h6></div>
                    
                     </div>
                      <div className="flex flex-row mx-10 ">   <img src="https://images.squarespace-cdn.com/content/v1/64acedcb87ea253648175060/06ec9fc6-ccee-40f8-a3a6-b10101a47da2/Self-Love-Digital-Journal.jpg?format=2500w"className="h-105 w-110 "/></div>   
