@@ -7,6 +7,16 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 const router = useRouter();
+ const handleLogout = async () => {
+    try {
+      await logout();        // Sign out from Firebase
+      setEmail("");          // Clear email state
+      setPassword("");       // Clear password state
+      router.replace("/"); // Redirect to login page
+    } catch (err) {
+      console.error("Logout failed", err);
+    }
+  };
   return (
     <div className=" bg-gradient-to-b from-[#C8E0F5] via-[#F3C9D8] to-[#FBC7E0] min-h-screen">
          <h1 className="text-black text-6xl ml-120 font-bold font-[marcellus] py-16">Digital Diary</h1>
@@ -34,7 +44,12 @@ const router = useRouter();
                           await resetEmail(email,password);
                         }}>Send Reset Email
                       </button>
-                      
+                       <button
+            className="md:w-50 w-50 h-13 bg-red-400 rounded-[5px] mt-5 text-white font-bold md:mx-20 hover:bg-red-600"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
                        <div className=" flex flex-row ">  <h6 className="text-gray-700 ml-10 mt-5 "> Don't have an account?</h6><h6 className="text-[#ECA49C] underline mt-5 ml-2"onClick={async(event)=>{
                          
                        router.replace('/signup')}}> Sign Up!</h6></div>

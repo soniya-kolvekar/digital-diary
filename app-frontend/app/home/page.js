@@ -48,6 +48,18 @@ export default function HomePage() {
           >
             🔥 Streak
           </a>
+          <a
+            href="/flashback"
+            className="w-full py-3 bg-purple-200 hover:bg-red-300 transition-colors rounded-lg font-medium text-gray-800"
+          >
+            ⏳ Flashback
+          </a>
+          <a
+            href="/profile/view"
+            className="w-full py-3 bg-purple-200 hover:bg-red-300 transition-colors rounded-lg font-medium text-gray-800"
+          >
+          👤 Profile
+          </a>
             <button
   type="button"
   className="bg-purple-200 p-2 h-10 w-30 text-black mt-4  rounded "
