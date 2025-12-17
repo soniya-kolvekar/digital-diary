@@ -1,7 +1,24 @@
 "use client"
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase";
 export default function HomePage() {
   const router=useRouter();
+  const [loading,setLoading]=useState(true);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.replace("/"); // 👈 go back to login
+      } else {
+        setLoading(false);   // 👈 allow page render
+      }
+    });return () => unsubscribe();
+  }, [auth, router]);
+
+  if (loading) {
+    return <p className="text-center mt-20">Loading...</p>;
+  }
   return (
     <div className="min-h-screen  bg-gradient-to-b from-[#95c9f7] via-[#ffcedf] to-[#FBC7E0] flex  p-6">
       <div className="w-1/2  flex flex-col  space-y-1 ">

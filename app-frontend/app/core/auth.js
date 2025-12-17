@@ -15,7 +15,7 @@ export async function createAccount(email, password) {
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
 
-    // CREATE FIRESTORE PROFILE DOCUMENT
+    // ✅ CREATE FIRESTORE PROFILE DOCUMENT
     await setDoc(doc(database, "users", result.user.uid), {
       name: "",
       profileCompleted: false,
@@ -24,6 +24,7 @@ export async function createAccount(email, password) {
 
     await sendEmailVerification(result.user);
     return result;
+
   } catch (error) {
     console.log(error);
   }
@@ -42,6 +43,7 @@ export async function login(email, password) {
 export async function logout() {
   try {
     return await signOut(auth);
+    await signInWithEmailAndPassword(auth,email,password);
   } catch (error) {
     console.log(error);
   }
@@ -64,6 +66,7 @@ export function listenToAuthChanges(callback) {
 
 /* CURRENT USER */
 export function getCurrentUser() {
-  const authInstance = getAuth();
-  return authInstance.currentUser;
+  const auth=getAuth();
+ 
+  return auth.currentUser;
 }
