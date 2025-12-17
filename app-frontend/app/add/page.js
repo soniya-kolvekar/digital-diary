@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
+import { useEffect } from "react";
 export default function AddEntryPage() {
   const router=useRouter();
   const [title, setTitle] = useState("");
@@ -37,7 +37,15 @@ export default function AddEntryPage() {
       setMessage("Failed to add entry.");
     }
   }
+useEffect(() => {
+  if (message) {
+    const timer = setTimeout(() => {
+      router.push("/delete");
+    }, 1500); // 1.5 sec so user sees success message
 
+    return () => clearTimeout(timer);
+  }
+}, [message, router]);
   return (
     <div
       style={{
@@ -98,7 +106,7 @@ export default function AddEntryPage() {
         </button>
         <button
   type="button"
-  className="bg-[#a1f1deff] p-3 h-10 w-30 text-black ml-2 rounded font-bold"
+  className="bg-[#a1f1deff] p-2 h-10 w-30 text-black ml-90 rounded "
   onClick={() => router.push("/home")}
 >
   Back
@@ -107,7 +115,7 @@ export default function AddEntryPage() {
       </form>
 
       {message && (
-        <p className="ml-20 mt-4 text-green-700 font-bold text-lg">{message}</p>
+        <p className="flex justify-center items-center  mt-5 py-5 text-[#9cc8edff] font-bold text-lg" >{message} </p>
       )}
      
     </div>

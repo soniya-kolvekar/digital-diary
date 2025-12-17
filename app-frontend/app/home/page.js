@@ -50,7 +50,7 @@ export default function HomePage() {
           </a>
             <button
   type="button"
-  className="bg-purple-200 p-3 h-10 w-30 text-black mt-4  rounded font-bold"
+  className="bg-purple-200 p-2 h-10 w-30 text-black mt-4  rounded "
   onClick={() => router.push("/")}
 >
   Back

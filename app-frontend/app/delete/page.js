@@ -1,29 +1,31 @@
-"use client"; 
+"use client";
+
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function EntriesPage() {
   const router = useRouter();
+
   const [entries, setEntries] = useState([]);
   const [message, setMessage] = useState("");
+
   const [editId, setEditId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
   const [editContent, setEditContent] = useState("");
   const [editMood, setEditMood] = useState("");
-  const [filterMood, setFilterMood] = useState(""); // mood filter
-  const [filterDate, setFilterDate] = useState(""); // date filter
-  const [showAll, setShowAll] = useState(true); // show all entries
 
-  // Load all entries on page load
+  const [filterMood, setFilterMood] = useState("");
+  const [filterDate, setFilterDate] = useState("");
+  const [sortOrder, setSortOrder] = useState(""); 
+  const [showAll, setShowAll] = useState(true);
+
+
   async function loadEntries() {
     const res = await fetch("http://localhost:8080/entry/all", {
-      headers: {
-        Authorization: "Bearer testuser",
-      },
+      headers: { Authorization: "Bearer testuser" },
     });
 
     if (!res.ok) return;
-
     const data = await res.json();
     setEntries(data);
   }
@@ -32,15 +34,13 @@ export default function EntriesPage() {
     loadEntries();
   }, []);
 
-  // Delete entry
+
   async function deleteEntry(id) {
     const res = await fetch(
       `http://localhost:8080/entry/delete?uid=testuser&id=${id}`,
       {
         method: "DELETE",
-        headers: {
-          Authorization: "Bearer testuser",
-        },
+        headers: { Authorization: "Bearer testuser" },
       }
     );
 
@@ -52,7 +52,7 @@ export default function EntriesPage() {
     }
   }
 
-  // Start edit
+
   function startEdit(entry) {
     setEditId(entry.id);
     setEditTitle(entry.title);
@@ -60,7 +60,6 @@ export default function EntriesPage() {
     setEditMood(entry.mood);
   }
 
-  // Update entry
   async function updateEntry(e) {
     e.preventDefault();
 
@@ -87,13 +86,32 @@ export default function EntriesPage() {
     }
   }
 
-  // Filtered entries
-  const filteredEntries = entries.filter((entry) => {
-    if (showAll) return true;
-    if (filterMood) return entry.mood === filterMood;
-    if (filterDate) return entry.created_at.startsWith(filterDate);
-    return true;
-  });
+
+  const filteredEntries = entries
+    .filter((entry) => {
+      if (showAll) return true;
+
+      if (filterMood) return entry.mood === filterMood;
+
+      if (filterDate) {
+        const entryDate = new Date(entry.created_at)
+          .toISOString()
+          .split("T")[0];
+        return entryDate === filterDate;
+      }
+
+      return true;
+    })
+    .sort((a, b) => {
+      if (!sortOrder) return 0;
+
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+
+      return sortOrder === "latest"
+        ? dateB - dateA
+        : dateA - dateB;
+    });
 
   return (
     <div
@@ -103,24 +121,25 @@ export default function EntriesPage() {
       }}
       className="min-h-screen p-10"
     >
-      <h1 className="text-5xl ml-115 font-bold text-black font-[marcellus] mb-10">
+      <h1 className="text-5xl font-bold text-black font-[marcellus] mb-10">
         Your Diary Entries
       </h1>
 
-      {/* Success / Error Message */}
       {message && (
-        <p className="text-green-700 text-xl font-bold mb-5">{message}</p>
+        <p className="text-[#a1f1deff] text-xl font-bold mb-5">{message}</p>
       )}
 
-      {/* Filters */}
+    
       <div className="flex gap-4 mb-6">
+        
         <button
           onClick={() => {
             setShowAll(true);
             setFilterMood("");
             setFilterDate("");
+            setSortOrder("");
           }}
-          className="p-2 bg-blue-200 rounded text-black border-black border-1"
+          className="p-2 rounded border text-black"
         >
           All Entries
         </button>
@@ -142,6 +161,19 @@ export default function EntriesPage() {
           <option value="stressed">😫 Stressed</option>
         </select>
 
+        <select
+          value={sortOrder}
+          onChange={(e) => {
+            setSortOrder(e.target.value);
+            setShowAll(false);
+          }}
+          className="p-2 border rounded text-black"
+        >
+          <option value="">Sort By</option>
+          <option value="latest">Latest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+
         <input
           type="date"
           value={filterDate}
@@ -154,12 +186,12 @@ export default function EntriesPage() {
         />
       </div>
 
-      {/* Entries List */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredEntries.map((entry) => (
           <div
             key={entry.id}
-            className="bg-white p-11 rounded-xl shadow-md text-black"
+            className="bg-white p-8 rounded-xl shadow-md text-black"
           >
             {editId === entry.id ? (
               <form onSubmit={updateEntry} className="flex flex-col gap-3">
@@ -185,10 +217,8 @@ export default function EntriesPage() {
                   <option value="excited">🤩 Excited</option>
                   <option value="stressed">😫 Stressed</option>
                 </select>
-                <button
-                  type="submit"
-                  className="bg-green-300 p-3 rounded font-bold"
-                >
+
+                <button className="bg-green-300 p-3 rounded font-bold">
                   Update Entry
                 </button>
                 <button
@@ -201,10 +231,12 @@ export default function EntriesPage() {
               </form>
             ) : (
               <>
-                <h2 className="text-3xl font-bold">{entry.title}</h2>
-                <p className="mt-1 text-sm italic">Date: {entry.created_at}</p>
+                <h2 className="text-2xl font-bold">{entry.title}</h2>
+                <p className="text-sm italic">
+                  Date: {new Date(entry.created_at).toLocaleDateString()}
+                </p>
                 <p className="mt-2">{entry.content}</p>
-                <p className="mt-1 italic">Mood: {entry.mood}</p>
+                <p className="italic">Mood: {entry.mood}</p>
 
                 <div className="flex gap-4 mt-4">
                   <button
@@ -219,23 +251,19 @@ export default function EntriesPage() {
                   >
                     Delete
                   </button>
-                  
                 </div>
-               
               </>
             )}
-            
           </div>
         ))}
-        <button
-  type="button"
-  className="bg-[#a1f1deff] p-3 h-10 w-30 text-black ml-2 rounded font-bold"
-  onClick={() => router.push("/home")}
->
-  Back
-</button>
-
       </div>
+
+      <button
+        className="mt-10 bg-[#a1f1deff] p-3 rounded font-bold flex flex-col text-black"
+        onClick={() => router.push("/home")}
+      >
+        Back
+      </button>
     </div>
   );
 }

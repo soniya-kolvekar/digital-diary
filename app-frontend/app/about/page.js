@@ -61,7 +61,7 @@ Excellence is reflected in attention to detail — from smooth UI interactions t
       </div>
      <button
   type="button"
-  className="bg-[#a1f1deff] p-3 h-10 w-30 text-black ml-58 mt-4 rounded font-bold"
+  className="bg-[#a1f1deff] p-2 h-10 w-30 text-black ml-152 mt-8 rounded font-bold"
   onClick={() => router.push("/home")}
 >
   Back

@@ -26,6 +26,7 @@ const router = useRouter();
                       <button className="md:w-50 w-40 h-13  bg-[#ECA49C] rounded-[5px] mt-5 text-black hover:text-white justify-center items-center md:mx-20   hover:bg-[#a14e87]"onClick={async(event)=>{
                           console.log(email,password);
                           await createAccount (email,password);
+                          router.replace('/signup')
                        0 }}>Sign Up
                       </button>
                       <button className="md:w-50 w-50 h-13 bg-[#ECA49C] rounded-[5px] mt-5  text-black hover:text-white justify-center items-center md:mx-20 hover:bg-[#a14e87]"onClick={async(event)=>{
