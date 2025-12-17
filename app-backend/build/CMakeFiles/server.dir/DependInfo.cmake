@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/digital diary/digital-diary/app-backend/src/entries_service.cpp" "CMakeFiles/server.dir/src/entries_service.cpp.obj" "msvc" "CMakeFiles/server.dir/src/entries_service.cpp.obj.d"
-  "D:/digital diary/digital-diary/app-backend/src/main.cpp" "CMakeFiles/server.dir/src/main.cpp.obj" "msvc" "CMakeFiles/server.dir/src/main.cpp.obj.d"
-  "D:/digital diary/digital-diary/app-backend/src/token_verifier.cpp" "CMakeFiles/server.dir/src/token_verifier.cpp.obj" "msvc" "CMakeFiles/server.dir/src/token_verifier.cpp.obj.d"
+  "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/src/entries_service.cpp" "CMakeFiles/server.dir/src/entries_service.cpp.obj" "msvc" "CMakeFiles/server.dir/src/entries_service.cpp.obj.d"
+  "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/src/main.cpp" "CMakeFiles/server.dir/src/main.cpp.obj" "msvc" "CMakeFiles/server.dir/src/main.cpp.obj.d"
+  "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/src/token_verifier.cpp" "CMakeFiles/server.dir/src/token_verifier.cpp.obj" "msvc" "CMakeFiles/server.dir/src/token_verifier.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
