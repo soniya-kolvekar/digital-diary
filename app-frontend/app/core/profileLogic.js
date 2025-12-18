@@ -1,7 +1,7 @@
 import { database } from "../../firebase";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 
-/* Save / Update profile */
+/* Save  Update profile */
 export async function updateUserProfile(uid, name) {
   await setDoc(
     doc(database, "users", uid),

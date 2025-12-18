@@ -1187,8 +1187,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-ln9xe0"
-      binary: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-ln9xe0"
+      source: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-l2obay"
+      binary: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-l2obay"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1197,28 +1197,28 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-ln9xe0'
+        Change Dir: 'C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-l2obay'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_df4dc\\fast
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x86\\nmake.exe"  -f CMakeFiles\\cmTC_df4dc.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_df4dc.dir\\build
-        Building C object CMakeFiles/cmTC_df4dc.dir/CMakeCCompilerABI.c.obj
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_df4dc.dir\\CMakeCCompilerABI.c.obj.d --working-dir=C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ln9xe0 --filter-prefix="Note: including file: " -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nmA97C.tmp
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_50967\\fast
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x86\\nmake.exe"  -f CMakeFiles\\cmTC_50967.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_50967.dir\\build
+        Building C object CMakeFiles/cmTC_50967.dir/CMakeCCompilerABI.c.obj
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_50967.dir\\CMakeCCompilerABI.c.obj.d --working-dir=C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l2obay --filter-prefix="Note: including file: " -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nm392B.tmp
         CMakeCCompilerABI.c
-        Linking C executable cmTC_df4dc.exe
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_df4dc.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_df4dc.dir\\objects1.rsp @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nmAB33.tmp
+        Linking C executable cmTC_50967.exe
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_50967.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_50967.dir\\objects1.rsp @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nm3B20.tmp
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_df4dc.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_df4dc.dir/embed.manifest
+        Create CMakeFiles\\cmTC_50967.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_50967.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_df4dc.dir/manifest.res CMakeFiles\\cmTC_df4dc.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_50967.dir/manifest.res CMakeFiles\\cmTC_50967.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_df4dc.dir\\objects1.rsp /out:cmTC_df4dc.exe /implib:cmTC_df4dc.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ln9xe0\\cmTC_df4dc.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_df4dc.dir/intermediate.manifest CMakeFiles\\cmTC_df4dc.dir/manifest.res
+        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_50967.dir\\objects1.rsp /out:cmTC_50967.exe /implib:cmTC_50967.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l2obay\\cmTC_50967.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_50967.dir/intermediate.manifest CMakeFiles\\cmTC_50967.dir/manifest.res
         MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe /nologo /manifest CMakeFiles\\cmTC_df4dc.dir/intermediate.manifest /out:CMakeFiles\\cmTC_df4dc.dir/embed.manifest /notify_update
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe /nologo /manifest CMakeFiles\\cmTC_50967.dir/intermediate.manifest /out:CMakeFiles\\cmTC_50967.dir/embed.manifest /notify_update
         RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_df4dc.dir/manifest.res CMakeFiles\\cmTC_df4dc.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_50967.dir/manifest.res CMakeFiles\\cmTC_50967.dir/manifest.rc
         FINAL LINK:
-        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_df4dc.dir\\objects1.rsp /out:cmTC_df4dc.exe /implib:cmTC_df4dc.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ln9xe0\\cmTC_df4dc.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_df4dc.dir/intermediate.manifest CMakeFiles\\cmTC_df4dc.dir/manifest.res
+        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_50967.dir\\objects1.rsp /out:cmTC_50967.exe /implib:cmTC_50967.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l2obay\\cmTC_50967.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_50967.dir/intermediate.manifest CMakeFiles\\cmTC_50967.dir/manifest.res
         
       exitCode: 0
   -
@@ -1258,8 +1258,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-tydcuz"
-      binary: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-tydcuz"
+      source: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-8e4331"
+      binary: "C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-8e4331"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1269,28 +1269,28 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-tydcuz'
+        Change Dir: 'C:/Users/ADARSH/Desktop/Digital_Diary/app-backend/build/CMakeFiles/CMakeScratch/TryCompile-8e4331'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_045af\\fast
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x86\\nmake.exe"  -f CMakeFiles\\cmTC_045af.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_045af.dir\\build
-        Building CXX object CMakeFiles/cmTC_045af.dir/CMakeCXXCompilerABI.cpp.obj
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_045af.dir\\CMakeCXXCompilerABI.cpp.obj.d --working-dir=C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tydcuz --filter-prefix="Note: including file: " -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nmB43A.tmp
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_da189\\fast
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x86\\nmake.exe"  -f CMakeFiles\\cmTC_da189.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_da189.dir\\build
+        Building CXX object CMakeFiles/cmTC_da189.dir/CMakeCXXCompilerABI.cpp.obj
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_da189.dir\\CMakeCXXCompilerABI.cpp.obj.d --working-dir=C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8e4331 --filter-prefix="Note: including file: " -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\cl.exe @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nm4188.tmp
         CMakeCXXCompilerABI.cpp
-        Linking CXX executable cmTC_045af.exe
-        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_045af.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_045af.dir\\objects1.rsp @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nmB4D8.tmp
+        Linking CXX executable cmTC_da189.exe
+        	"C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_da189.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests -- C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_da189.dir\\objects1.rsp @C:\\Users\\ADARSH\\AppData\\Local\\Temp\\nm4235.tmp
         Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_045af.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_045af.dir/embed.manifest
+        Create CMakeFiles\\cmTC_da189.dir/manifest.rc
+        Create empty: CMakeFiles\\cmTC_da189.dir/embed.manifest
         RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_045af.dir/manifest.res CMakeFiles\\cmTC_045af.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_da189.dir/manifest.res CMakeFiles\\cmTC_da189.dir/manifest.rc
         LINK Pass 1:
-        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_045af.dir\\objects1.rsp /out:cmTC_045af.exe /implib:cmTC_045af.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tydcuz\\cmTC_045af.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_045af.dir/intermediate.manifest CMakeFiles\\cmTC_045af.dir/manifest.res
+        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_da189.dir\\objects1.rsp /out:cmTC_da189.exe /implib:cmTC_da189.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8e4331\\cmTC_da189.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_da189.dir/intermediate.manifest CMakeFiles\\cmTC_da189.dir/manifest.res
         MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe /nologo /manifest CMakeFiles\\cmTC_045af.dir/intermediate.manifest /out:CMakeFiles\\cmTC_045af.dir/embed.manifest /notify_update
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe /nologo /manifest CMakeFiles\\cmTC_da189.dir/intermediate.manifest /out:CMakeFiles\\cmTC_da189.dir/embed.manifest /notify_update
         RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_045af.dir/manifest.res CMakeFiles\\cmTC_045af.dir/manifest.rc
+        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe /fo CMakeFiles\\cmTC_da189.dir/manifest.res CMakeFiles\\cmTC_da189.dir/manifest.rc
         FINAL LINK:
-        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_045af.dir\\objects1.rsp /out:cmTC_045af.exe /implib:cmTC_045af.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tydcuz\\cmTC_045af.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_045af.dir/intermediate.manifest CMakeFiles\\cmTC_045af.dir/manifest.res
+        C:\\PROGRA~2\\MICROS~2\\18\\BUILDT~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx86\\x86\\link.exe /nologo @CMakeFiles\\cmTC_da189.dir\\objects1.rsp /out:cmTC_da189.exe /implib:cmTC_da189.lib /pdb:C:\\Users\\ADARSH\\Desktop\\Digital_Diary\\app-backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8e4331\\cmTC_da189.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_da189.dir/intermediate.manifest CMakeFiles\\cmTC_da189.dir/manifest.res
         
       exitCode: 0
   -

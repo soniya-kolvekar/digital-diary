@@ -30,7 +30,7 @@ export default function Login() {
 
       <div className="flex flex-row">
         <div className=" ml-60 w-full">
-          <h6 className="text-gray-700 ml-27">Enter your credentials</h6>
+          <h6 className="text-gray-700 ml-65">Enter your credentials</h6>
         </div>
 
         <div className="flex flex-col -ml-345">
@@ -56,8 +56,8 @@ export default function Login() {
             className="md:w-50 w-40 h-13 bg-[#ECA49C] rounded-[5px] mt-5 text-black hover:text-white justify-center items-center md:mx-20 hover:bg-[#a14e87]"
             onClick={async () => {
               try {
-                await login(email, password); // ✅ Firebase auth
-                router.replace("/home");      // redirect ONLY on success
+                await login(email, password);
+                router.replace("/home");     
               } catch (err) {
                 setError("Invalid email or password");
               }
@@ -94,12 +94,7 @@ export default function Login() {
             Send Reset Email
           </button>
 
-          <button
-            className="md:w-50 w-50 h-13 bg-red-400 rounded-[5px] mt-5 text-white font-bold md:mx-20 hover:bg-red-600"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+        
 
           <div className="flex flex-row">
             <h6 className="text-gray-700 ml-10 mt-5">
