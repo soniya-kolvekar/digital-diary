@@ -116,8 +116,7 @@ export default function ViewProfile() {
         </div>
       </div>
 
-      {/* Flashbacks Section */}
-      <div className="w-full mt-20 flex flex-col items-center">
+cd      <div className="w-full mt-20 flex flex-col items-center">
         <h2 className="text-4xl font-bold font-[marcellus] text-center mb-6 text-black">Entries ✨</h2>
 
         {error && <p className="text-red-600 text-lg font-semibold text-center mb-6">{error}</p>}

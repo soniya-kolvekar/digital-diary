@@ -23,7 +23,7 @@ export default function HomePage() {
     <div className="min-h-screen  bg-gradient-to-b from-[#95c9f7] via-[#ffcedf] to-[#FBC7E0] flex  p-6">
       <div className="w-1/2  flex flex-col  space-y-1 ">
         <div>
-          <img src="https://i.pinimg.com/1200x/d7/f3/92/d7f3925344fb1f37704fac60d240d67a.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-500 border-2" />
+          <img src="/image/logo.jpg" alt="Digital Diary" className=" mx-auto mb-8 w-24 h-24 rounded-full shadow-lg border-purple-500 border-2" />
       </div>
       <div>
         
@@ -88,10 +88,10 @@ export default function HomePage() {
       </div>
     </div></div>
     <div className="grid grid-cols-2 mx-3 gap-5  w-1/2">
-      <img className="border-purple-500 border-2 opacity-75 rounded-3xl "src="https://i.pinimg.com/1200x/d0/3f/3c/d03f3c262fff039e030213116e6c152a.jpg"/>
-            <img className=" border-purple-500 border-2 rounded-3xl  opacity-75" src="https://i.pinimg.com/736x/9b/92/7b/9b927ba6e9010895a4a6e9d5068e9f3c.jpg"/>
-             <img className="border-purple-500 border-2 opacity-75 rounded-3xl " src="https://i.pinimg.com/1200x/e5/a3/9f/e5a39f5562e03ffbae9e067e21910093.jpg"/>
-<img className="border-purple-500 border-2 opacity-75 rounded-3xl " src="https://i.pinimg.com/736x/c8/5a/53/c85a532861625430d989e2172206d564.jpg"/>
+      <img className="border-purple-500 border-2 opacity-75 rounded-3xl "src="/image/img1.jpg"/>
+            <img className=" border-purple-500 border-2 rounded-3xl  opacity-75" src="/image/img2.jpg"/>
+             <img className="border-purple-500 border-2 opacity-75 rounded-3xl " src="/image/img3.jpg"/>
+<img className="border-purple-500 border-2 opacity-75 rounded-3xl " src="/image/img4.jpg"/>
 
       </div></div>
   );

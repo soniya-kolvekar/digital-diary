@@ -27,6 +27,7 @@ export async function createAccount(email, password) {
 
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
@@ -36,16 +37,18 @@ export async function login(email, password) {
     return await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
 /* LOGOUT */
 export async function logout() {
   try {
-    return await signOut(auth);
-    await signInWithEmailAndPassword(auth,email,password);
+    await signOut(auth);
+    
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
@@ -56,6 +59,7 @@ export async function resetEmail(email) {
     alert("Reset email sent");
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
