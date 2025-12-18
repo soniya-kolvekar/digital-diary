@@ -16,8 +16,6 @@ export default function AddEntryPage() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-
-        // IMPORTANT → C++ backend expects Authorization: Bearer <uid>
         "Authorization": "Bearer testuser"
       },
       body: JSON.stringify({
@@ -41,7 +39,7 @@ useEffect(() => {
   if (message) {
     const timer = setTimeout(() => {
       router.push("/delete");
-    }, 1500); // 1.5 sec so user sees success message
+    }, 1500); 
 
     return () => clearTimeout(timer);
   }

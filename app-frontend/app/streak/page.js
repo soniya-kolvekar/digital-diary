@@ -53,8 +53,6 @@ export default function StreakPage() {
           <p className="text-xl mt-4 text-gray-700">🔥 Days in a row</p>
         </div>
       )}
-
-      {/* Buttons */}
       <div className="flex flex-col mt-10">
         {streak !== null && (
           <button
