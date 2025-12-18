@@ -208,7 +208,7 @@ server.Options(R"(.*)", [](const httplib::Request&, httplib::Response& res) {
     });
 
     // -------------------------------------------------------------------
-    // READ SINGLE ENTRY (moved to bottom + renamed)
+    // READ SINGLE ENTRY 
     // -------------------------------------------------------------------
     server.Get(R"(/entry/item/([\w\-_\.]+))", [&](const httplib::Request& req, httplib::Response& res){
         std::string id = req.matches[1];
