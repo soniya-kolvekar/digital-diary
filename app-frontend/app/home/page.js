@@ -9,9 +9,9 @@ export default function HomePage() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
-        router.replace("/"); // 👈 go back to login
+        router.replace("/"); 
       } else {
-        setLoading(false);   // 👈 allow page render
+        setLoading(false);   
       }
     });return () => unsubscribe();
   }, [auth, router]);

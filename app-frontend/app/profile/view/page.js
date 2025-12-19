@@ -14,7 +14,7 @@ export default function ViewProfile() {
   const router = useRouter();
   const auth = getAuth();
 
-  // Track Firebase auth state
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (!firebaseUser) {
@@ -33,7 +33,7 @@ export default function ViewProfile() {
     return () => unsubscribe();
   }, [auth, router]);
 
-  // Fetch user profile
+
   useEffect(() => {
     if (!user) return;
 
@@ -53,7 +53,6 @@ export default function ViewProfile() {
     fetchProfile();
   }, [user, router]);
 
-  // Fetch flashbacks
   useEffect(() => {
     if (!user) return;
 
@@ -62,7 +61,7 @@ export default function ViewProfile() {
         const res = await fetch("http://localhost:8080/entry/flashback", {
           method: "GET",
           headers: {
-            "Authorization": "Bearer testuser", // temporarily use same UID as EntriesPage
+            "Authorization": "Bearer testuser", 
             "Content-Type": "application/json"
           },
           cache: "no-store"
@@ -93,7 +92,6 @@ export default function ViewProfile() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#C8E0F5] via-[#F3C9D8] to-[#FBC7E0] flex flex-row ">
 
-      {/* Profile Card */}
       <div className="w-full flex justify-center mt-20">
         <div className="bg-white/40 backdrop-blur-md p-10 rounded-xl shadow-xl w-[500px] h-[320px]">
           <h1 className="text-3xl font-bold mb-6 text-center font-[marcellus] text-black">My Profile</h1>

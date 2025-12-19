@@ -36,7 +36,6 @@ export default function EditProfile() {
       <div className="flex justify-center">
         <div className="flex flex-col bg-white/30 backdrop-blur-md p-10 rounded-xl shadow-lg">
 
-          {/* Email (readonly) */}
           <label className="text-gray-700 mb-1">Email</label>
           <input
             value={email}
@@ -44,7 +43,6 @@ export default function EditProfile() {
             className="w-90 h-13 bg-[#E3E8F0] text-gray-600 rounded-[5px] px-7 mb-6 cursor-not-allowed"
           />
 
-          {/* Name */}
           <label className="text-gray-700 mb-1">Name</label>
           <input
             value={name}

@@ -9,13 +9,10 @@ import {
   onAuthStateChanged
 } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
-
-/* SIGN UP */
 export async function createAccount(email, password) {
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
 
-    // ✅ CREATE FIRESTORE PROFILE DOCUMENT
     await setDoc(doc(database, "users", result.user.uid), {
       name: "",
       profileCompleted: false,
@@ -30,8 +27,7 @@ export async function createAccount(email, password) {
     throw error;
   }
 }
-
-/* LOGIN */
+ 
 export async function login(email, password) {
   try {
     return await signInWithEmailAndPassword(auth, email, password);
@@ -40,8 +36,7 @@ export async function login(email, password) {
     throw error;
   }
 }
-
-/* LOGOUT */
+ 
 export async function logout() {
   try {
     await signOut(auth);
@@ -52,7 +47,6 @@ export async function logout() {
   }
 }
 
-/* RESET PASSWORD */
 export async function resetEmail(email) {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -63,12 +57,12 @@ export async function resetEmail(email) {
   }
 }
 
-/* AUTH STATE LISTENER */
+
 export function listenToAuthChanges(callback) {
   return onAuthStateChanged(auth, callback);
 }
 
-/* CURRENT USER */
+
 export function getCurrentUser() {
   const auth=getAuth();
  
